@@ -4,6 +4,7 @@ class SuperComputerPlayer < ComputerPlayer
   def move(game, mark)
     node = TicTacToeNode.new(game.board, mark)
     children = node.children
+    
     children.each do |child|
       return child.prev_move_pos if child.winning_node?(mark)    
     end

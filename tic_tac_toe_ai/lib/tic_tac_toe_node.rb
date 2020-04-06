@@ -11,8 +11,7 @@ class TicTacToeNode
     @next_mover_mark = next_mover_mark
     @prev_move_pos = prev_move_pos
   end
-  # This method generates an array of all moves that can be made after
-  # the current move.
+  
   def children
     children = []
     # debugger
@@ -54,7 +53,7 @@ class TicTacToeNode
   end
 
   def winning_node?(evaluator)
-    if self.board.over?
+    if self.board.over? # Base case
       if self.board.winner == evaluator
         true
       else
